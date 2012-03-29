@@ -2,7 +2,7 @@
 	name = con_mame
 	email = con_mame@conma.me
 [github]
-	user = con_mame
+	user = 
 	token = 
 [core]
 	excludesfile = /Users/con_mame/.gitignore
