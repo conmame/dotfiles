@@ -1,0 +1,34 @@
+[user]
+	name = con_mame
+	email = con_mame@conma.me
+[github]
+	user = con_mame
+	token = 
+[core]
+	excludesfile = /Users/con_mame/.gitignore
+	editor = /usr/bin/vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	grep = auto
+	ui = true
+[push]
+	default = current
+[alias]
+	st = status
+	co = checkout
+	ci = commit -v
+	di = diff
+	br = branch
+	puhs = push
+	psuh = push
+	pus = push
+	puh = push
+	pl = !git pull && git submodule update --init

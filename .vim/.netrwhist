@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/con_mame/.vim'
+let g:netrw_dirhist_2='/Users/con_mame/.rvm/rubies/ruby-1.9.3-head/bin'
+let g:netrw_dirhist_3='/Users/con_mame/work/study/nicoCanvas/.settings'
+let g:netrw_dirhist_4='/Users/con_mame/work/coderwall_irc_bot/.git'
+let g:netrw_dirhist_5='/Users/con_mame/work/coderwall_irc_bot/spec/tests'
+let g:netrw_dirhist_6='/Users/con_mame/work/coderwall/lib/coderwall'
