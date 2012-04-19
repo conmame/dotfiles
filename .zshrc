@@ -121,6 +121,30 @@ source /Users/con_mame/.zsh/zaw/zaw.zsh
 zstyle ':filter-select' case-insentive yes
 bindkey '^@' zaw-cdr
 
+function rprompt-git-current-branch {
+        local name st color
+
+        if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
+                return
+        fi
+        name=$(basename "`git symbolic-ref HEAD 2> /dev/null`")
+        if [[ -z $name ]]; then
+                return
+        fi
+        st=`git status 2> /dev/null`
+        if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+                color=${fg[green]}
+        elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
+                color=${fg[yellow]}
+        elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
+                color=${fg_bold[red]}
+        else
+                color=${fg[red]}
+        fi
+
+        echo "%{$color%}$name%{$reset_color%} "
+}
+
 case ${UID} in
 0)
   PROMPT="%B%{${fg[red]}%}%/#%{${reset_color}%}%b "
@@ -132,7 +156,7 @@ case ${UID} in
 *)
   PROMPT="%{${fg[red]}%}%n%#%{${reset_color}%} "
   PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
-  RPROMPT="[%~]"
+  RPROMPT='[`rprompt-git-current-branch`%~]'
   SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
     PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
