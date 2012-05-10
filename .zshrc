@@ -1,7 +1,7 @@
 export LANG=ja_JP.UTF-8
 export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin/:$PATH
 export MANPATH=/opt/local/man:$MANPATH
-export TERM=dtterm
+export TERM=xterm
 
 #補完
 autoload -U compinit
